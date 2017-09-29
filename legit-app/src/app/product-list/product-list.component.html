@@ -1,0 +1,49 @@
+<body>
+    <div class="container">
+        <form>
+            Date of Childcare:
+            <md-form-field>
+                <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
+                <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
+                <md-datepicker #picker></md-datepicker>
+            </md-form-field>
+            Time of Childcare:
+            <select [(ngModel)]="selectedHourStart">
+                    <option *ngFor="let h of hours" [ngValue]="h">{{h}}</option>
+                  </select>
+            <select [(ngModel)]="selectedHourStart">
+                        <option *ngFor="let m of minutes" [ngValue]="m">{{m}}</option>
+                      </select> -
+            <select [(ngModel)]="selectedHourEnd">
+                            <option *ngFor="let h of hours" [ngValue]="h">{{h}}</option>
+                          </select>
+            <select [(ngModel)]="selectedHourEnd">
+                                <option *ngFor="let m of minutes" [ngValue]="m">{{h}}</option>
+                              </select><br/>
+            <table cellspacing="0">
+                <tr>
+                    <td>
+                        <md-form-field>
+                            <input mdInput placeholder="Address">
+                        </md-form-field>
+                    </td>
+                    
+                    <td>
+                        <md-form-field>
+                            <input mdInput #postalCode maxlength="5" placeholder="Postal Code" value="">
+                            <md-hint align="end">{{postalCode.value.length}} / 5</md-hint>
+                        </md-form-field>
+                    </td>
+                </tr>
+            </table>
+            Pick up my kid(s):
+            <md-checkbox class="example-margin" [(ngModel)]="pickup"></md-checkbox><br/> Take care of my kid(s):
+            <md-checkbox class="example-margin" [(ngModel)]="takecare"></md-checkbox><br/> Drop off my kid(s):
+            <md-checkbox class="example-margin" [(ngModel)]="dropoff"> </md-checkbox><br/>
+            <button md-raised-button (click)="submit()"color="primary">Submit Request</button>
+            
+
+
+        </form>
+    </div>
+</body>
