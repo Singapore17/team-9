@@ -61,7 +61,7 @@ public class CustomerDAO {
 
         }
         catch(SQLException e){
-            System.out.println("FROM CUST DAO" + e);
+            System.out.println("FROM CUST " + e);
         }
         finally {
             ConnectionManager.close(conn, stmt, rs);
