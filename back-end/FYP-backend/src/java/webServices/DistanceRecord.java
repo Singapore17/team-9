@@ -43,7 +43,7 @@ public class DistanceRecord {
             String destinations = "Singapore579799";
             String units = "metric";
             String mode = "walking";
-            String key = "AIzaSyCU8bZCnhCJrvPyOfREnd5d2-iXqb3Ax-s";
+            String key = "";
 
             URL url = new URL("https://maps.googleapis.com/maps/api/distancematrix/json?units=" + units + ""
                     + "&origins=" + origin + "&mode=" + mode + "&destinations=" + destinations + "&key=" + key);
