@@ -6,9 +6,9 @@
 package dao;
 
 import database.ConnectionManager;
-import entity.Address;
-import entity.Customer;
-import entity.Order;
+import entity.Booking;
+import entity.GroupA;
+import entity.GroupB;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,20 +19,20 @@ import java.util.ArrayList;
  *
  * @author JeremyBachtiar
  */
-public class CustomerDAO {
+public class BookingDAO {
 //    
 
-    public Customer retrieveCustomerByEmail(String email) throws SQLException {
+    public GroupB retrieveGroupAByBooking(int bookId) throws SQLException {
         Connection conn = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
-        Customer customer = null;
+        GroupB groupB = null;
 
-        String sql = "SELECT * FROM customer WHERE email = ? ";
+        String sql = "SELECT * FROM GrpB WHERE BookID = ? ";
         try {
             conn = ConnectionManager.getConnection();
             stmt = conn.prepareStatement(sql);
-            stmt.setString(1, email);
+            stmt.setString(1, BookID);
             rs = stmt.executeQuery();
             while (rs.next()) {
 

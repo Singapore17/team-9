@@ -5,6 +5,10 @@ public class GroupA {
     private String ID;
     private String name;
     private String contact;
+    private String location;
+    private String time;
+    private String service;
+    
  
 
     public GroupA(String ID, String name, String contact) {
@@ -25,7 +29,11 @@ public class GroupA {
     }
     
     public String getLocation() {
-    		
+    		return location;
+    }
+    
+    public String getService() {
+    	return service;
     }
 
     
